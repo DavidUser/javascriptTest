@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function readCookies() {
+				var allCookies = document.cookie;
+				document.write("All Cookies: " + allCookies + "<br\>");
+
+				cookiesArray = allCookies.split(";");
+				for (var i = 0; i < cookiesArray.length; i++) {
+					name = cookiesArray[i].split('=')[0];
+					value = cookiesArray[i].split('=')[1];
+					document.write("Key is: " + name + " and Value is " + value);
+					document.write("<br/>");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform" action="">
+			<p> Click the following button and see your cookies value. </p>
+			<input type="button" value="Get Cookie" onclick=readCookies(); />
+		</form>
+	</body>
+</html>

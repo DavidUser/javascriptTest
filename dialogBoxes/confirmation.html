@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function getConfirmation() {
+				var confirmed = confirm("Do you want to continue?");
+				document.write("User " + 
+					(confirmed? "wants" : "does not want") +
+					" to continue!");
+				return confirmed;
+			}
+		</script>
+	</head>
+	<body>
+		<p>Click the following button to see the confirmation box. </p>
+
+		<form>
+			<input type="button" value="click me" onclick=getConfirmation(); />
+		</form>
+	</body>
+</html>
