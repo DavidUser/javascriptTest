@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			// defines a object and initilize properties (attributes)
+			var book = new Object();
+			book.subject = "Perl";
+			book.author = "Mohtashin";
+		</script>
+
+		<script type="text/javascript">
+			// defines a fuction which will work as a method
+			function addPrice(amount) {
+				this.price = amount;
+			}
+
+			// defines a object constructor
+			function Book(title, author) {
+				this.title = title;
+				this.author = author;
+				this.addPrice = addPrice;
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// use object properties
+			document.write("Book name is: " + book.subject + "<br/>");
+			document.write("Book author is: " + book.author + "<br/>");
+		</script>
+
+		<hr/>
+
+		<script type="text/javascript">
+			// create object
+			var myNewBook = new Book("Algorithms", "Cormen");
+			// use a method from a Book object
+			myNewBook.addPrice(250);
+			// use object properties
+			document.write("Book name is: " + myNewBook.title + "<br/>");
+			document.write("Book author is: " + myNewBook.author + "<br/>");
+			document.write("Book price is: " + myNewBook.price + "<br/>");
+		</script>
+
+		<hr/>
+		<script type="text/javascript">
+			// create object
+			var myWithBook = new Book("C++", "Stroustup");
+			// use "with" keyword to implicity use his methods and properties
+			with (myWithBook) {
+				// use a method from a Book object
+				addPrice(600);
+				// use object properties
+				document.write("Book name is: " + title + "<br/>");
+				document.write("Book author is: " + author + "<br/>");
+				document.write("Book price is: " + price + "<br/>");
+			}
+		</script>
+	</body>
+</html>
